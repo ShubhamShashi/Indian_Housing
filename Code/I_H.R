@@ -1,9 +1,12 @@
 summary(IndianHouses)
 model <- lm(BHK~Area,IndianHouses)
+plot(model)
+
 summary(model)
 attach(IndianHouses)
 g_model <- glm(BHK~Area+Price,family = "gaussian")
 summary(g_model)
+plot(g_model)
 
 model_p <- lm(BHK~Price)
 summary(model_p)
@@ -44,3 +47,11 @@ gl <- glm(Price~Type+Area+Bathroom+BHK+Parking+Status,family = "gaussian",Indian
 summary(gl)
 
 gl$aic #(44226.14)
+
+pie(IndianHouses)
+plot(Area,Price)
+#have to use ggplot to plot these data
+
+
+
+
